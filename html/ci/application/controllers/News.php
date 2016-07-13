@@ -20,6 +20,9 @@ class News extends CI_Controller {
   public function view($slug = NULL)
   {
     $data['news_item'] = $this->news_model->get_news($slug);
+    $this->load->view('templates/header', $data);
+    $this->load->view('news/view', $data);
+    $this->load->view('templates/footer');
   }
 
   public function create()
@@ -32,27 +35,29 @@ class News extends CI_Controller {
     $this->form_validation->set_rules('title', 'Title', 'required');
     $this->form_validation->set_rules('text', 'text', 'required');
 
-    if ($this->form_validation->run() === FALSE)
+    $data['msg'] = '';
+    if ($this->form_validation->run())
     {
-      $this->load->view('templates/header', $data);
-      $this->load->view('news/create');
-      $this->load->view('templates/footer');
+      if($this->news_model->set_news()) {
+        $data['msg'] = 'Create item success!';
+      }
+      else {
+        $data['msg'] = 'Create item failed!';
+      }
     }
-    else
-    {
-      $this->news_model->set_news();
-      $this->load->view('news/success');
-    }
+    $this->load->view('templates/header', $data);
+    $this->load->view('news/create');
+    $this->load->view('templates/footer');
   }
 
-  public function success()
+  public function delete($id)
   {
-    $data['news'] = $this->news_model->get_news();
-    $data['title'] = 'News archive';
-
-    $this->load->view('templates/header', $data);
-    $this->load->view('news/index', $data);
-    $this->load->view('templates/footer');
+    $this->load->helper('url');
+    if ($id > 0)
+    {
+      $this->news_model->delete_news($id);
+    }
+    redirect('/news');
   }
 
 }
