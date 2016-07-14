@@ -35,12 +35,11 @@
 	<!-- Custom JS -->
 	<script src="app/app.js"></script>
 	<script src="app/helper/myHelper.js"></script>
+
+	<!-- App Controller -->
 	<script src="app/item/item.js"></script>
 	<script src="app/item/item-service.js"></script>
 	<script src="app/item/item-controller.js"></script>
-
-	<!-- App Controller -->
-	<script src="app/controllers/ItemController.js"></script>
 
 </head>
 <body>
