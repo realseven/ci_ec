@@ -13,7 +13,7 @@
       .state('item', {
         parent: 'public-base',
         url: '^/item',
-        templateUrl: 'templates/items.html',
+        templateUrl: 'app/item/items.html',
         controller: 'ItemCtrl as ItemController'
       });
   }
