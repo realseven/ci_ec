@@ -46,24 +46,26 @@
           <h4 class="modal-title" id="myModalLabel">Create Item</h4>
         </div>
         <div class="modal-body">
-          <div class="container">
-            <div class="row">
-              <div class="col-xs-12 col-sm-6 col-md-6">
-                <strong>Title : </strong>
-                <div class="form-group">
-                  <input ng-model="form.title" type="text" placeholder="Name" name="title" class="form-control" required />
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-6">
-                <strong>Description : </strong>
-                <div class="form-group">
-                  <textarea ng-model="form.description" class="form-control" required>
-                  </textarea>
-                </div>
+          <div class="row">
+            <div class="col-xs-12 col-lg-6">
+              <strong>Title : </strong>
+              <div class="form-group">
+                <input ng-model="form.title" type="text" placeholder="Name" name="title" class="form-control" required />
               </div>
             </div>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" ng-disabled="addItem.$invalid" class="btn btn-primary">Submit</button>
+            <div class="col-xs-12 col-lg-6">
+              <strong>Description : </strong>
+              <div class="form-group">
+                <textarea ng-model="form.description" class="form-control" required>
+                </textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" ng-disabled="addItem.$invalid" class="btn btn-primary">Submit</button>
+            </div>
           </div>
         </div>
       </form>
@@ -82,22 +84,26 @@
           <h4 class="modal-title" id="myModalLabel">Edit Item</h4>
         </div>
         <div class="modal-body">
-          <div class="container">
-            <div class="row">
-              <div class="col-xs-12 col-sm-6 col-md-6">
-                <div class="form-group">
-                  <input ng-model="form.title" type="text" placeholder="Name" name="title" class="form-control" required />
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-6">
-                <div class="form-group">
-                  <textarea ng-model="form.description" class="form-control" required>
-                  </textarea>
-                </div>
+          <div class="row">
+            <div class="col-xs-12 col-lg-6">
+              <strong>Title : </strong>
+              <div class="form-group">
+                <input ng-model="form.title" type="text" placeholder="Name" name="title" class="form-control" required />
               </div>
             </div>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" ng-disabled="editItem.$invalid" class="btn btn-primary create-crud">Submit</button>
+            <div class="col-xs-12 col-lg-6">
+              <strong>Description : </strong>
+              <div class="form-group">
+                <textarea ng-model="form.description" class="form-control" required>
+                </textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" ng-disabled="editItem.$invalid" class="btn btn-primary create-crud">Submit</button>
+            </div>
           </div>
         </div>
       </form>
